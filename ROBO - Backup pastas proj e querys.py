@@ -11,6 +11,7 @@ import threading
 
 #para sair da automacao colocando o mouse no topo a esquerda da janela
 pyautogui.FAILSAFE = True
+status = True
 
 def pausa(tempo):
     print("time de:" , tempo)
@@ -259,12 +260,20 @@ def backup_IW_QUERIES_HOME_CARE():
 
 def Executar():
     print(f"#==================================== Executar()")
+    global status
     try:
-        print("Iniciando...")
-        backup_Projetos()
-        backup_MV_QUERYs()
-        backup_IW_QUERIES_HOME_CARE()
-        fim()
+        while status:
+            time.sleep(1)
+            print(f"Status: {status}")
+            print("Iniciando...")
+            backup_Projetos()
+            backup_MV_QUERYs()
+            backup_IW_QUERIES_HOME_CARE()
+            if status==False:
+                print(f"dentro do if;\nstatus: {status}")
+                print("Execucao paralizada!")
+                break
+        #fim()
     except Exception as erro:
         print(f"log.close() {agora()}\nErro: {erro=}, {type(erro)=}")  
 
@@ -284,11 +293,20 @@ def interface():
     #para interromper 
     threadExecutar.daemon = True
         
-    bt_Iniciar = tk.Button(root, text="Iniciar", command=lambda: [ print("Botao Iniciar") , threadExecutar.start()])
+    bt_Iniciar = tk.Button(root, text="Iniciar", command=lambda: [ print("Botao Iniciar") , lb_console.config(text="Backup iniciado!") , threadExecutar.start()])
     bt_Iniciar.pack( fill="both" , expand=True)     
 
-    bt_Sair = tk.Button(root, text="Fechar", command=lambda: [ print("Botao Fechar\nroot.destroy()\nfechar_thread.set()\n\n") , root.destroy(), fechar_thread.set()])
+    global status
+    def altera_status():
+        global status
+        status = False
+        print(f"Status depois: {status}")
+        
+    bt_Sair = tk.Button(root, text="Pausar", command=lambda: [ print("Botao Pausar") , lb_console.config(text="Backup pausado!!") , altera_status() ])
     bt_Sair.pack(fill="both" , expand=True)
+    
+    lb_console = tk.Label(root, text="")
+    lb_console.pack(fill="both" , expand=True)
     
     root.mainloop()  
 try:
