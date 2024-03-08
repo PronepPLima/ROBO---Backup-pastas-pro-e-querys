@@ -176,3 +176,143 @@ Função Backup MV QUERYS - fim - 27/11/2023 07:59:28
 Função Backup IW QUERIES HOME CARE - início - 27/11/2023 07:59:28
 Função Backup IW QUERIES HOME CARE - fim - 27/11/2023 08:00:11
 Função Backup Projetos - início - 27/11/2023 10:39:38
+Função Backup Projetos - início - 04/12/2023 07:48:11
+Função Backup Projetos - início - 04/12/2023 07:50:36
+Função Backup Projetos - início - 04/12/2023 07:51:54
+Função Backup Projetos - fim - 04/12/2023 07:52:27
+Função Backup MV QUERYS - início - 04/12/2023 07:52:27
+Função Backup MV QUERYS - fim - 04/12/2023 07:53:08
+Função Backup IW QUERIES HOME CARE - início - 04/12/2023 07:53:08
+Função Backup IW QUERIES HOME CARE - fim - 04/12/2023 07:53:50
+Função Backup Projetos - início - 04/12/2023 07:53:51
+Função Backup Projetos - fim - 04/12/2023 07:54:24
+Função Backup MV QUERYS - início - 04/12/2023 07:54:24
+Função Backup MV QUERYS - fim - 04/12/2023 07:55:05
+Função Backup IW QUERIES HOME CARE - início - 04/12/2023 07:55:05
+Função Backup IW QUERIES HOME CARE - fim - 04/12/2023 07:55:47
+Função Backup Projetos - início - 04/12/2023 07:55:48
+Função Backup Projetos - fim - 04/12/2023 07:56:21
+Função Backup MV QUERYS - início - 04/12/2023 07:56:21
+Função Backup MV QUERYS - fim - 04/12/2023 07:57:02
+Função Backup IW QUERIES HOME CARE - início - 04/12/2023 07:57:02
+Função Backup IW QUERIES HOME CARE - fim - 04/12/2023 07:57:45
+Função Backup Projetos - início - 04/12/2023 07:57:46
+Função Backup Projetos - início - 04/12/2023 08:07:58
+Função Backup Projetos - fim - 04/12/2023 08:08:31
+Função Backup MV QUERYS - início - 04/12/2023 08:08:31
+Função Backup MV QUERYS - fim - 04/12/2023 08:09:11
+Função Backup IW QUERIES HOME CARE - início - 04/12/2023 08:09:11
+Função Backup IW QUERIES HOME CARE - fim - 04/12/2023 08:09:54
+Função Backup Projetos - início - 04/12/2023 08:09:55
+Função Backup Projetos - fim - 04/12/2023 08:10:28
+Função Backup MV QUERYS - início - 04/12/2023 08:10:28
+Função Backup MV QUERYS - fim - 04/12/2023 08:11:08
+Função Backup IW QUERIES HOME CARE - início - 04/12/2023 08:11:08
+Função Backup Projetos - início - 05/12/2023 15:34:11
+Função Backup Projetos - início - 05/12/2023 15:36:50
+Função Backup Projetos - início - 05/12/2023 15:37:42
+Função Backup Projetos - início - 05/12/2023 15:38:14
+Função Backup Projetos - fim - 05/12/2023 15:39:12
+Função Backup MV QUERYS - início - 05/12/2023 15:39:12
+Função Backup MV QUERYS - fim - 05/12/2023 15:40:18
+Função Backup IW QUERIES HOME CARE - início - 05/12/2023 15:40:18
+Função Backup IW QUERIES HOME CARE - fim - 05/12/2023 15:41:26
+Função Backup Projetos - início - 07/12/2023 14:04:14
+Função Backup Projetos - fim - 07/12/2023 14:05:11
+Função Backup MV QUERYS - início - 07/12/2023 14:05:11
+Função Backup MV QUERYS - fim - 07/12/2023 14:06:17
+Função Backup IW QUERIES HOME CARE - início - 07/12/2023 14:06:17
+Função Backup Projetos - início - 08/12/2023 10:45:46
+Função Backup Projetos - fim - 08/12/2023 10:46:44
+Função Backup MV QUERYS - início - 08/12/2023 10:46:44
+Função Backup MV QUERYS - fim - 08/12/2023 10:47:50
+Função Backup IW QUERIES HOME CARE - início - 08/12/2023 10:47:50
+Função Backup IW QUERIES HOME CARE - fim - 08/12/2023 10:48:57
+Função Backup Projetos - início - 11/12/2023 07:23:24
+Função Backup Projetos - fim - 11/12/2023 07:24:21
+Função Backup MV QUERYS - início - 11/12/2023 07:24:21
+Função Backup MV QUERYS - fim - 11/12/2023 07:25:27
+Função Backup IW QUERIES HOME CARE - início - 11/12/2023 07:25:27
+Função Backup IW QUERIES HOME CARE - fim - 11/12/2023 07:26:35
+Função Backup Projetos - início - 12/12/2023 07:23:12
+Função Backup Projetos - fim - 12/12/2023 07:24:09
+Função Backup MV QUERYS - início - 12/12/2023 07:24:09
+Função Backup MV QUERYS - fim - 12/12/2023 07:25:15
+Função Backup IW QUERIES HOME CARE - início - 12/12/2023 07:25:15
+Função Backup IW QUERIES HOME CARE - fim - 12/12/2023 07:26:23
+Função Backup Projetos - início - 18/12/2023 08:00:23
+Função Backup Projetos - fim - 18/12/2023 08:01:21
+Função Backup MV QUERYS - início - 18/12/2023 08:01:21
+Função Backup MV QUERYS - fim - 18/12/2023 08:02:27
+Função Backup IW QUERIES HOME CARE - início - 18/12/2023 08:02:27
+Função Backup IW QUERIES HOME CARE - fim - 18/12/2023 08:03:34
+Função Backup Projetos - início - 26/12/2023 21:50:49
+Função Backup Projetos - fim - 26/12/2023 21:51:47
+Função Backup MV QUERYS - início - 26/12/2023 21:51:47
+Função Backup MV QUERYS - fim - 26/12/2023 21:52:52
+Função Backup IW QUERIES HOME CARE - início - 26/12/2023 21:52:52
+Função Backup IW QUERIES HOME CARE - fim - 26/12/2023 21:54:00
+Função Backup Projetos - início - 08/01/2024 07:27:41
+Função Backup Projetos - início - 08/01/2024 07:30:43
+Função Backup Projetos - início - 08/01/2024 07:32:32
+Função Backup Projetos - início - 08/01/2024 07:33:12
+Função Backup Projetos - fim - 08/01/2024 07:34:39
+Função Backup MV QUERYS - início - 08/01/2024 07:34:39
+Função Backup MV QUERYS - fim - 08/01/2024 07:36:15
+Função Backup IW QUERIES HOME CARE - início - 08/01/2024 07:36:15
+Função Backup IW QUERIES HOME CARE - fim - 08/01/2024 07:37:53
+Função Backup Projetos - início - 12/01/2024 11:00:53
+Função Backup Projetos - fim - 12/01/2024 11:02:20
+Função Backup MV QUERYS - início - 12/01/2024 11:02:20
+Função Backup MV QUERYS - fim - 12/01/2024 11:03:56
+Função Backup IW QUERIES HOME CARE - início - 12/01/2024 11:03:56
+Função Backup IW QUERIES HOME CARE - fim - 12/01/2024 11:05:34
+Função Backup Projetos - início - 16/01/2024 10:29:43
+Função Backup Projetos - fim - 16/01/2024 10:31:11
+Função Backup MV QUERYS - início - 16/01/2024 10:31:11
+Função Backup MV QUERYS - fim - 16/01/2024 10:32:46
+Função Backup IW QUERIES HOME CARE - início - 16/01/2024 10:32:46
+Função Backup IW QUERIES HOME CARE - fim - 16/01/2024 10:34:24
+Função Backup Projetos - início - 22/01/2024 07:48:04
+Função Backup Projetos - fim - 22/01/2024 07:49:31
+Função Backup MV QUERYS - início - 22/01/2024 07:49:31
+Função Backup MV QUERYS - fim - 22/01/2024 07:51:07
+Função Backup IW QUERIES HOME CARE - início - 22/01/2024 07:51:07
+Função Backup IW QUERIES HOME CARE - fim - 22/01/2024 07:52:45
+Função Backup Projetos - início - 23/01/2024 07:46:03
+Função Backup Projetos - fim - 23/01/2024 07:47:31
+Função Backup MV QUERYS - início - 23/01/2024 07:47:31
+Função Backup MV QUERYS - fim - 23/01/2024 07:49:06
+Função Backup IW QUERIES HOME CARE - início - 23/01/2024 07:49:06
+Função Backup IW QUERIES HOME CARE - fim - 23/01/2024 07:50:44
+Função Backup Projetos - início - 25/01/2024 19:56:56
+Função Backup Projetos - fim - 25/01/2024 19:58:23
+Função Backup MV QUERYS - início - 25/01/2024 19:58:23
+Função Backup MV QUERYS - fim - 25/01/2024 19:59:59
+Função Backup IW QUERIES HOME CARE - início - 25/01/2024 19:59:59
+Função Backup IW QUERIES HOME CARE - fim - 25/01/2024 20:01:36
+Função Backup Projetos - início - 29/01/2024 15:39:07
+Função Backup Projetos - fim - 29/01/2024 15:40:34
+Função Backup MV QUERYS - início - 29/01/2024 15:40:34
+Função Backup MV QUERYS - fim - 29/01/2024 15:42:10
+Função Backup IW QUERIES HOME CARE - início - 29/01/2024 15:42:10
+Função Backup IW QUERIES HOME CARE - fim - 29/01/2024 15:43:48
+Função Backup Projetos - início - 30/01/2024 08:34:29
+Função Backup Projetos - fim - 30/01/2024 08:35:56
+Função Backup MV QUERYS - início - 30/01/2024 08:35:56
+Função Backup MV QUERYS - fim - 30/01/2024 08:37:32
+Função Backup IW QUERIES HOME CARE - início - 30/01/2024 08:37:32
+Função Backup IW QUERIES HOME CARE - fim - 30/01/2024 08:39:10
+Função Backup Projetos - início - 01/02/2024 09:25:59
+Função Backup Projetos - fim - 01/02/2024 09:27:26
+Função Backup MV QUERYS - início - 01/02/2024 09:27:26
+Função Backup MV QUERYS - fim - 01/02/2024 09:29:02
+Função Backup IW QUERIES HOME CARE - início - 01/02/2024 09:29:02
+Função Backup IW QUERIES HOME CARE - fim - 01/02/2024 09:30:40
+Função Backup Projetos - início - 02/02/2024 16:51:24
+Função Backup Projetos - fim - 02/02/2024 16:52:51
+Função Backup MV QUERYS - início - 02/02/2024 16:52:51
+Função Backup MV QUERYS - fim - 02/02/2024 16:54:27
+Função Backup IW QUERIES HOME CARE - início - 02/02/2024 16:54:27
+Função Backup IW QUERIES HOME CARE - fim - 02/02/2024 16:56:05
+Função Backup Projetos - início - 08/03/2024 14:47:58

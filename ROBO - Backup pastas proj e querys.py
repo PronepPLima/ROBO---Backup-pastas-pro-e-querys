@@ -9,19 +9,22 @@ import os
 import tkinter as tk
 import threading
 
+import signal
+
 #para sair da automacao colocando o mouse no topo a esquerda da janela
 pyautogui.FAILSAFE = True
 status = True
+statusThread = False
 
 def pausa(tempo):
     print("time de:" , tempo)
     time.sleep(tempo)   
     
 def fechando_explorer():
-    pausa(1)
+    pausa(5)
     print("Fechando explorer;")
-    pyautogui.hotkey("Alt" , "f4")
-    pausa(1)   
+    pyautogui.hotkey("win" , "d")#("Alt" , "f4")
+    pausa(2)   
 
 def agora():
     agora = datetime.datetime.now()
@@ -29,9 +32,12 @@ def agora():
     return str(agora)
     
 def fim():
+    global status
     #fechando_explorer()    
     print("Backup finalizado com sucesso!")      
-    pyautogui.alert("     Backup finalizado com sucesso!     " , timeout=5000)
+    pyautogui.alert("     Backup finalizado com sucesso!     " , timeout=1000000)
+    status = False
+    print(f"Status: {status}")
     print("==================================== FIM ====================================")    
     #sys.exit()
     #fechando_explorer()
@@ -60,9 +66,9 @@ def botao_Apps():
     pyautogui.hotkey("down")
     pyautogui.hotkey("down")
     pausa(1)
-    print("Enter;")
+    print("Enter botao_Apps;")
     pyautogui.hotkey("enter")
-    pausa(5)
+    pausa(60)
     
 def backup_Projetos():
     print("***Função Backup Projetos***")
@@ -77,12 +83,16 @@ def backup_Projetos():
     pyautogui.hotkey("enter")
     pausa(1)
     print("click na pasta;")
-    #pyautogui.click(975 , 531)
+    pyautogui.click(975 , 531)
+    pausa(1)
     pyautogui.hotkey("win" , "up")
+    pausa(1)
+    print("Projetos")
     pyautogui.write("Projetos")
     botao_Apps()
     #selecionando arquivo zip recem criado
     print("selecionando arquivo zip recem criado")
+    pausa(60)
     pyautogui.write("Projetos.zip")
     pausa(1)
     pyautogui.hotkey("f2")
@@ -99,6 +109,7 @@ def backup_Projetos():
     pausa(1)
     print("ctrl + x;")
     pyautogui.hotkey("ctrl" , "x")
+    pausa(2)
     fechando_explorer()
     print("Tecla windows + R;")
     pyautogui.hotkey("win" , "r")
@@ -123,19 +134,23 @@ def backup_Projetos():
 
 def backup_MV_QUERYs():
     print("Função Backup MV QUERYS - início")
-    log("Função Backup MV QUERYS - início")    
-    pausa(2)
-    print("win + r")
+    log("Função Backup MV QUERYS - início")
+    print("Tecla windows + R;")
     pyautogui.hotkey("win" , "r")
     pausa(1)
     print("backspace")
     pyautogui.hotkey("backspace")
     pausa(1)
-    print("C:\Pietro\OneDrive - PRONEP")
+    print("Inserindo: C:\Pietro\OneDrive - PRONEP")
     pyautogui.write("C:\Pietro\OneDrive - PRONEP")
     pausa(1)
     print("enter")
     pyautogui.hotkey("enter")
+    pausa(1)
+    print("click na pasta;")
+    pyautogui.click(975 , 531)
+    pausa(1)
+    pyautogui.hotkey("win" , "up")
     pausa(1)
     print("16. Homologação")
     pyautogui.write("16. Homologação ")
@@ -150,11 +165,12 @@ def backup_MV_QUERYs():
     pausa(1)
     #selecionando arquivo zip recem criado
     print("selecionando arquivo zip recem criado")
+    pausa(30)
     pyautogui.write("MV QUERYs.zip")
-    pausa(1)
+    pausa(2)
     print("f2")
     pyautogui.hotkey("f2")
-    pausa(1)
+    pausa(2)
     print("Registrando momento atual;")
     agora = datetime.datetime.now()    
     print("Agora: " , str(agora))    
@@ -164,10 +180,10 @@ def backup_MV_QUERYs():
     pausa(2)
     print("enter")
     pyautogui.hotkey("enter")
-    pausa(1)
-    print("ctrl + c;")
+    pausa(2)
+    print("ctrl + x;")
     pyautogui.hotkey("ctrl" , "x")
-    #todo
+    pausa(2)
     fechando_explorer()
     print("Tecla windows + R;")
     pyautogui.hotkey("win" , "r")
@@ -186,7 +202,7 @@ def backup_MV_QUERYs():
     pyautogui.hotkey("ctrl" , "v")
     pausa(5)
     #todo
-    fechando_explorer()
+    #fechando_explorer()
     log("Função Backup MV QUERYS - fim")    
     
 def backup_IW_QUERIES_HOME_CARE():
@@ -217,6 +233,7 @@ def backup_IW_QUERIES_HOME_CARE():
     botao_Apps()
     pausa(1)
     #selecionando arquivo zip recem criado
+    pausa(5)
     print("selecionando arquivo zip recem criado;")
     pyautogui.write("IW QUERIES HOME_CARE.zip")
     pausa(1)
@@ -235,9 +252,9 @@ def backup_IW_QUERIES_HOME_CARE():
     pausa(1)
     print("ctrl + c;")
     pyautogui.hotkey("ctrl" , "x")
-    pausa(1)
+    pausa(2)
     #todo
-    fechando_explorer()
+    #fechando_explorer()
     pausa(1)    
     print("Tecla windows + R;")
     pyautogui.hotkey("win" , "r")
@@ -258,61 +275,74 @@ def backup_IW_QUERIES_HOME_CARE():
     fechando_explorer()
     log("Função Backup IW QUERIES HOME CARE - fim")        
 
+
+#funcao abaixo concentra todas as tarefas em fila e executa:
 def Executar():
     print(f"#==================================== Executar()")
     global status
     try:
         while status:
             time.sleep(1)
-            print(f"Status: {status}")
-            print("Iniciando...")
-            backup_Projetos()
-            backup_MV_QUERYs()
-            backup_IW_QUERIES_HOME_CARE()
             if status==False:
                 print(f"dentro do if;\nstatus: {status}")
                 print("Execucao paralizada!")
                 break
-        #fim()
+            print(f"Status no while: {status}")
+            print("Iniciando...")
+            backup_Projetos()
+            backup_MV_QUERYs()
+            backup_IW_QUERIES_HOME_CARE()
+            fim()
     except Exception as erro:
         print(f"log.close() {agora()}\nErro: {erro=}, {type(erro)=}")  
+
+def pausar():
+    global statusThread
+    statusThread=False
+    print(f"global statusThread: {statusThread}")
+    print("============================== Pausar() ========================")
+
+
 
 #==================================== INÍCIO ====================================
 def interface():
     root = tk.Tk()
-    root.maxsize(600,600)
-    root.minsize(600,150)
-    root.geometry("400x50")
+    root.maxsize(720,500)
+    root.minsize(360,250)
+    root.geometry("360x250")
     root.title("ROBO - BACKUP PASTA C")
-    #criando evento na thread, para ser usado apos ser setado, ser verificado e encerrar a thread        
-    fechar_thread = threading.Event()    
+    root.configure(bg="white")
     
-    #iniciando thread para usar na funcao Executar()    
-    threadExecutar = threading.Thread(target=Executar)
     
-    #para interromper 
-    threadExecutar.daemon = True
-        
-    bt_Iniciar = tk.Button(root, text="Iniciar", command=lambda: [ print("Botao Iniciar") , lb_console.config(text="Backup iniciado!") , threadExecutar.start()])
-    bt_Iniciar.pack( fill="both" , expand=True)     
+    def start():        
+        global statusThread
+        #criando evento na thread, para ser usado apos ser setado, ser verificado e encerrar a thread
+        if statusThread:
+            print(f"Thread já foi iniciada, statusThread: \n{statusThread}")
+        else:        
+            #iniciando thread para usar na funcao Executar()    
+            threadExecutar = threading.Thread(target=Executar).start()
+            #threadExecutar.start()
+            statusThread = True
+            print(f"statusThread: {statusThread}\nthreadExecutar.start()\n")
+    
+    imagem = tk.PhotoImage(file="BACKUP.png")
+    lb_barra_superior = tk.Label(root, image=imagem , border =0)
+    lb_barra_superior.pack()
+    
+    bt_Iniciar = tk.Button(root, text="Iniciar", command=lambda: [ print("Botao Iniciar") , lb_console.config(text="Robo inicializado!") , start()])
+    bt_Iniciar.pack(fill="both", expand=True , padx=100 , pady=5 )    
 
-    global status
-    def altera_status():
-        global status
-        status = False
-        print(f"Status depois: {status}")
-        
-    bt_Sair = tk.Button(root, text="Pausar", command=lambda: [ print("Botao Pausar") , lb_console.config(text="Backup pausado!!") , altera_status() ])
-    bt_Sair.pack(fill="both" , expand=True)
+    bt_Sair = tk.Button(root, text="Fechar", command=lambda: [ print("Botao Fechar") , lb_console.config(text="Robo pausado!") , os.kill(os.getpid(), signal.SIGINT)])
+    bt_Sair.pack(fill="both", expand=True , padx=100 , pady=5)
     
-    lb_console = tk.Label(root, text="")
-    lb_console.pack(fill="both" , expand=True)
+    lb_console = tk.Label(root, text="...não inicializado...")
+    lb_console.pack(fill="both" , expand=True , pady=10)    
     
     root.mainloop()  
 try:
     if __name__ == "__main__":
         print("==================================== INÍCIO ====================================")
-        pausa(2)
         interface()
 
 except KeyboardInterrupt:
