@@ -194,10 +194,7 @@ def backup_Projetos():
             log("Função Backup Projetos - fim")   
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
-            break
-        
-        #mudando o status assim que finalizar o backup:
-        statusThread=False     
+            break   
 
 def backup_MV_QUERYs():
     global statusThread
@@ -351,8 +348,6 @@ def backup_MV_QUERYs():
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
             break
-
-        statusThread=False 
     
 def backup_IW_QUERIES_HOME_CARE():
     global statusThread
@@ -502,7 +497,6 @@ def backup_IW_QUERIES_HOME_CARE():
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
             break
-        statusThread=False 
 
 
 def Executar():
@@ -519,9 +513,9 @@ def Executar():
             um_segundo = 1
             pausa(um_segundo)
             if statusThread:             
-                print(f"Iniciando as {agora()}\nbackup_Projetos()")
-                backup_Projetos()
-                pausa(2)
+                #print(f"Iniciando as {agora()}\nbackup_Projetos()")
+                #backup_Projetos()
+                #pausa(2)
                 print(f"Iniciando as {agora()}\nbackup_MV_QUERYs")
                 backup_MV_QUERYs()
                 pausa(2)
