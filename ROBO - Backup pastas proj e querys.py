@@ -37,11 +37,7 @@ def agora():
     
 def fim():
     global statusThread
-    statusThread = False
-    lb_console.config(text=f"Backup finalizado: {agora()}")
-    lb_console.pack(fill="both" , expand=True , pady=10)  
-    pausa(5)
-    print("fim()\nBackup finalizado com sucesso!")      
+    print("Backup finalizado!")      
     pyautogui.alert("     Backup finalizado com sucesso!     " )
     print(f"statusThread: {statusThread}")
     print("==================================== FIM ====================================")    
@@ -72,62 +68,13 @@ def botao_Apps():
     pausa(1)
     print("Enter botao_Apps;")
     pyautogui.hotkey("enter")
-    pausa(80)
-    
-def Executar():
-    try:        
-        global varia
-        global statusThread   
-        
-        print("============================== Executar() ========================")
-        print(f"statusThread: {statusThread}\n")
-        print("Agora: " , str(agora()))
-
-        while statusThread:
-            #tempo para clicar nas 2 opções:
-            um_segundo = 1
-            pausa(um_segundo)
-            if statusThread:             
-                print(f"Iniciando as {agora()}\nbackup_Projetos()")
-                lb_console.config(text=f"Iniciando as {agora()}\nbackup_Projetos()")
-                lb_console.pack(fill="both" , expand=True , pady=10)   
-                backup_Projetos()
-                pausa(15)
-                
-                print(f"Iniciando as {agora()}\nbackup_MV_QUERYs")
-                lb_console.config(text=f"Iniciando as {agora()}\nbackup_MV_QUERYs")
-                lb_console.pack(fill="both" , expand=True , pady=10)  
-                backup_MV_QUERYs()
-                pausa(15)
-                
-                print(f"Iniciando as {agora()}\nbackup_IW_QUERIES_HOME_CARE")
-                lb_console.config(text=f"Iniciando as {agora()}\nbackup_IW_QUERIES_HOME_CARE")
-                lb_console.pack(fill="both" , expand=True , pady=10)  
-                backup_IW_QUERIES_HOME_CARE()   
-                fim()            
-            else:
-                print(f"statusThread: {statusThread}\n{agora()}")
-                print("finalizando o looping que prende a thread")
-                #esse break abaixo esta finalizando o looping que prende a thread
-                um_segundo = 0.3
-                break            
-    except Exception as erro:
-        print(f"\n{agora()}\nError: {erro}") 
-        pyautogui.alert(title="==== Exception ====" , text=erro , timeout=2000) 
-        exit()
-        
-def pausar():
-    global statusThread
-    statusThread=False
-    print("============================== Pausar() ========================")
-    lb_console.config(text=f"Pausar: {agora()}\nglobal statusThread: {statusThread}")
-    lb_console.pack(fill="both" , expand=True , pady=10)  
-    print(f"global statusThread: {statusThread}")
+    pausa(90)
     
 def backup_Projetos():
     global statusThread
     while statusThread:
         print("******** Função Backup Projetos ********\n\n")
+        lb_console.configure(text="Função Backup Projetos")
         print(f"statusThread: {statusThread}\n")
         log("Função Backup Projetos - início")
         print("Tecla windows + R;")
@@ -198,11 +145,6 @@ def backup_Projetos():
             print("enter")
             pyautogui.hotkey("enter")
             pausa(1)
-            print("click na pasta;")
-            pyautogui.click(975 , 531)
-            pausa(1)
-            pyautogui.hotkey("win" , "up")
-            pausa(1)
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
             break
@@ -225,8 +167,8 @@ def backup_Projetos():
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
             break
         if statusThread: 
-            print("Inserindo: C:\Pietro\OneDrive - PRONEP\Backup")
-            pyautogui.write("C:\Pietro\OneDrive - PRONEP\Backup")
+            print(r"C:\Users\pietro.lima\OneDrive - PRONEP\Backup")
+            pyautogui.write(r"C:\Users\pietro.lima\OneDrive - PRONEP\Backup")
             pausa(1)
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
@@ -234,12 +176,7 @@ def backup_Projetos():
         if statusThread: 
             print("Enter;")
             pyautogui.hotkey("enter")
-            pausa(1)
-            print("click na pasta;")
-            pyautogui.click(975 , 531)
-            pausa(1)
-            pyautogui.hotkey("win" , "up")
-            pausa(1)
+            pausa(2)
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
             break
@@ -264,13 +201,18 @@ def backup_Projetos():
 
 def backup_MV_QUERYs():
     global statusThread
-    statusThread = True
     while statusThread:
         print(" ******** Função Backup MV QUERYS Projetos.zip********\n\n")
         log("Função Backup MV QUERYS - início")
-        print("Tecla windows + R;")
-        pyautogui.hotkey("win" , "r")
-        pausa(1)
+        lb_console.configure(text="Função Backup MV QUERYS")
+        #lb_console.pack(side="top",  padx=10)  
+        if statusThread: 
+            print("Tecla windows + R;")
+            pyautogui.hotkey("win" , "r")
+            pausa(1)
+        else:
+            print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
+            break
         if statusThread: 
             print("backspace")
             pyautogui.hotkey("backspace")
@@ -279,8 +221,8 @@ def backup_MV_QUERYs():
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
             break
         if statusThread: 
-            print("Inserindo: C:\Pietro\OneDrive - PRONEP")
-            pyautogui.write("C:\Pietro\OneDrive - PRONEP")
+            print(r"Inserindo: C:\Users\pietro.lima\OneDrive - PRONEP")
+            pyautogui.write(r"C:\Users\pietro.lima\OneDrive - PRONEP")
             pausa(1)
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
@@ -289,19 +231,12 @@ def backup_MV_QUERYs():
             print("enter")
             pyautogui.hotkey("enter")
             pausa(1)
-            print("click na pasta;")
-            pyautogui.click(975 , 531)
-            pausa(1)
-            pyautogui.hotkey("win" , "up")
-            pausa(1)
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
             break
         if statusThread: 
             print("click na pasta;")
             pyautogui.click(975 , 531)
-            pausa(1)
-            pyautogui.hotkey("win" , "up")
             pausa(1)
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
@@ -323,16 +258,11 @@ def backup_MV_QUERYs():
             print("enter")
             pyautogui.hotkey("enter")
             pausa(1)
-            print("click na pasta;")
-            pyautogui.click(975 , 531)
-            pausa(1)
-            pyautogui.hotkey("win" , "up")
-            pausa(1)
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
             break
         if statusThread: 
-            print("MV QUERYs")
+            print("pyautogui.write('MV QUERYs')")
             pyautogui.write("MV QUERYs")
             pausa(1)
         else:
@@ -393,8 +323,8 @@ def backup_MV_QUERYs():
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
             break
         if statusThread: 
-            print("Inserindo: C:\Pietro\OneDrive - PRONEP\Backup")
-            pyautogui.write("C:\Pietro\OneDrive - PRONEP\Backup")
+            print(r"C:\Users\pietro.lima\OneDrive - PRONEP\Backup")
+            pyautogui.write(r"C:\Users\pietro.lima\OneDrive - PRONEP\Backup")
             pausa(1)
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
@@ -426,9 +356,9 @@ def backup_MV_QUERYs():
     
 def backup_IW_QUERIES_HOME_CARE():
     global statusThread
-    statusThread = True
     while statusThread:
         print("******** Função Backup IW QUERIES HOME CARE ********\n\n")
+        lb_console.configure(text="Função Backup IW QUERIES HOME CARE")
         log("Função Backup IW QUERIES HOME CARE - início")        
         pausa(2)
         if statusThread: 
@@ -446,8 +376,8 @@ def backup_IW_QUERIES_HOME_CARE():
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
             break
         if statusThread: 
-            print("C:\Pietro\OneDrive - PRONEP")
-            pyautogui.write("C:\Pietro\OneDrive - PRONEP")
+            print(r"C:\Users\pietro.lima\OneDrive - PRONEP")
+            pyautogui.write(r"C:\Users\pietro.lima\OneDrive - PRONEP")
             pausa(1)
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
@@ -469,11 +399,6 @@ def backup_IW_QUERIES_HOME_CARE():
         if statusThread: 
             print("enter;")    
             pyautogui.hotkey("enter")
-            pausa(1)
-            print("click na pasta;")
-            pyautogui.click(975 , 531)
-            pausa(1)
-            pyautogui.hotkey("win" , "up")
             pausa(1)
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
@@ -544,8 +469,8 @@ def backup_IW_QUERIES_HOME_CARE():
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
             break
         if statusThread: 
-            print("Inserindo: C:\Pietro\OneDrive - PRONEP\Backup")
-            pyautogui.write("C:\Pietro\OneDrive - PRONEP\Backup")
+            print(r"C:\Users\pietro.lima\OneDrive - PRONEP\Backup")
+            pyautogui.write(r"C:\Users\pietro.lima\OneDrive - PRONEP\Backup")
             pausa(1)
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
@@ -580,7 +505,45 @@ def backup_IW_QUERIES_HOME_CARE():
         statusThread=False 
 
 
+def Executar():
+    try:        
+        global varia
+        global statusThread   
+        
+        print("============================== Executar() ========================")
+        print(f"statusThread: {statusThread}\n")
+        print("Agora: " , str(agora()))
 
+        while statusThread:
+            #tempo para clicar nas 2 opções:
+            um_segundo = 1
+            pausa(um_segundo)
+            if statusThread:             
+                print(f"Iniciando as {agora()}\nbackup_Projetos()")
+                backup_Projetos()
+                pausa(2)
+                print(f"Iniciando as {agora()}\nbackup_MV_QUERYs")
+                backup_MV_QUERYs()
+                pausa(2)
+                print(f"Iniciando as {agora()}\nbackup_IW_QUERIES_HOME_CARE")
+                backup_IW_QUERIES_HOME_CARE()   
+                fim()            
+            else:
+                print(f"statusThread: {statusThread}\n{agora()}")
+                print("finalizando o looping que prende a thread")
+                #esse break abaixo esta finalizando o looping que prende a thread
+                um_segundo = 0.3
+                break            
+    except Exception as erro:
+        print(f"\n{agora()}\nError: {erro}") 
+        pyautogui.alert(title="==== Exception ====" , text=erro , timeout=2000) 
+        exit()
+        
+def pausar():
+    global statusThread
+    statusThread=False
+    print("============================== Pausar() ========================")
+    print(f"global statusThread: {statusThread}")
     
     
     
@@ -602,15 +565,14 @@ if __name__ == "__main__":
     print("============================== inicio ========================")
 
     root = tk.Tk()
-    root.maxsize(450,420)
-    #root.minsize(720,500)
-    root.geometry("450x420")
+    root.maxsize(480, 350)
+    root.minsize(480, 350)
+    root.geometry("480x350")
     root.title("ROBO - BACKUP PASTA C")
     root.configure(bg="white")
     
     def start():        
         global statusThread
-
         print("============================== start() ========================")
         print(f"statusThread: {statusThread}\n")
         #criando evento na thread, para ser usado apos ser setado, ser verificado e encerrar a thread
@@ -621,21 +583,18 @@ if __name__ == "__main__":
             threadExecutar = threading.Thread(target=Executar).start()
             statusThread = True
             print(f"statusThread: {statusThread}\nthreadExecutar.start()\n")
-            lb_console.config(text=f"statusThread: {statusThread}\nthreadExecutar.start()\n")
-            lb_console.pack(fill="both" , expand=True , pady=10)   
-            
-            
+                        
     imagem = tk.PhotoImage(file="BACKUP.png")
     lb_barra_superior = tk.Label(root, image=imagem , border =0)
-    lb_barra_superior.pack()
+    lb_barra_superior.pack(side="top")
     
-    lb_console = tk.Label(root, text="...não inicializado...")
-    lb_console.pack(fill="both" , expand=True , pady=10)   
-        
-    bt_Iniciar = tk.Button(root, text="Iniciar", command=lambda: [ lb_console.config(text="Robo inicializado!") , start()])
-    bt_Iniciar.pack(fill="both", expand=True , padx=100 , pady=5 )    
+    lb_console = tk.Label(root, width=70, height=2, text="...não inicializado...")
+    lb_console.pack(side="top",  padx=10)  
+       
+    bt_Iniciar = tk.Button(root, width=30, height=4, text="Iniciar", command=lambda: [ lb_console.config(text="Robo inicializado!") , start()])
+    bt_Iniciar.pack(side="left" , padx=10 )    
 
-    bt_Sair = tk.Button(root, text="Pausar", command=lambda: [ lb_console.config(text="Robo pausado!") , (pausar())]) #sys.exit()
-    bt_Sair.pack(fill="both", expand=True , padx=100 , pady=5)
-    
+    bt_Sair = tk.Button(root, width=30, height=4, text="Parar", command=lambda: [ lb_console.config(text="Robo pausado!") , pausar()]) #sys.exit()
+    bt_Sair.pack(side="right", padx=10)
+ 
     root.mainloop()
