@@ -72,6 +72,7 @@ def botao_Apps():
     
 def backup_Projetos():
     global statusThread
+    statusThread=True
     while statusThread:
         print("******** Função Backup Projetos ********\n\n")
         lb_console.configure(text="Função Backup Projetos")
@@ -194,10 +195,14 @@ def backup_Projetos():
             log("Função Backup Projetos - fim")   
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
-            break   
+            break
+        
+        #mudando o status assim que finalizar o backup:
+        statusThread=False     
 
 def backup_MV_QUERYs():
     global statusThread
+    statusThread=True
     while statusThread:
         print(" ******** Função Backup MV QUERYS Projetos.zip********\n\n")
         log("Função Backup MV QUERYS - início")
@@ -348,9 +353,12 @@ def backup_MV_QUERYs():
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
             break
+
+        statusThread=False 
     
 def backup_IW_QUERIES_HOME_CARE():
     global statusThread
+    statusThread=True
     while statusThread:
         print("******** Função Backup IW QUERIES HOME CARE ********\n\n")
         lb_console.configure(text="Função Backup IW QUERIES HOME CARE")
@@ -497,6 +505,7 @@ def backup_IW_QUERIES_HOME_CARE():
         else:
             print(f"Aplicacao paralisada!\nstatusThread: {statusThread}\n")
             break
+        statusThread=False 
 
 
 def Executar():
@@ -513,9 +522,9 @@ def Executar():
             um_segundo = 1
             pausa(um_segundo)
             if statusThread:             
-                #print(f"Iniciando as {agora()}\nbackup_Projetos()")
-                #backup_Projetos()
-                #pausa(2)
+                print(f"Iniciando as {agora()}\nbackup_Projetos()")
+                backup_Projetos()
+                pausa(2)
                 print(f"Iniciando as {agora()}\nbackup_MV_QUERYs")
                 backup_MV_QUERYs()
                 pausa(2)
