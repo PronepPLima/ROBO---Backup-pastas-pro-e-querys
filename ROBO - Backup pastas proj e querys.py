@@ -35,13 +35,6 @@ def agora():
     agora = agora.strftime("%d/%m/%Y %H:%M:%S")
     return str(agora)
     
-def fim():
-    global statusThread
-    print("Backup finalizado!")      
-    pyautogui.alert("     Backup finalizado com sucesso!     " )
-    print(f"statusThread: {statusThread}")
-    print("==================================== FIM ====================================")    
-    
 def log(texto_):
     if not os.path.exists("log.txt"):
             with open("log.txt" , "a" , encoding="utf-8-sig") as log:
@@ -530,7 +523,10 @@ def Executar():
                 pausa(2)
                 print(f"Iniciando as {agora()}\nbackup_IW_QUERIES_HOME_CARE")
                 backup_IW_QUERIES_HOME_CARE()   
-                fim()            
+                print("Backup finalizado!")      
+                pyautogui.alert("     Backup finalizado com sucesso!     " )
+                print(f"statusThread: {statusThread}")
+                print("==================================== FIM ====================================")                
             else:
                 print(f"statusThread: {statusThread}\n{agora()}")
                 print("finalizando o looping que prende a thread")
