@@ -4,12 +4,10 @@
 import pyautogui
 import datetime
 import time
-import sys
 import os
 import tkinter as tk
 import threading
 
-import signal
 
 #para sair da automacao colocando o mouse no topo a esquerda da janela
 pyautogui.FAILSAFE = True
